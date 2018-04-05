@@ -47,11 +47,43 @@ def sort_by_cohort(filename):
     summer_16 = []
     fall_15 = []
     ghosts = []
+    filename = open(filename)
+    for line in filename:
+        line = line.rstrip()
+        word = line.split("|")
 
-    # Code goes here
+        if word[4] == "Winter 2016":
+            student_name = "{} {}".format(word[0], word[1])
+            winter_16.append(student_name)
+        
+        elif word[4] == "Spring 2016":
+            student_name = "{} {}".format(word[0], word[1])
+            spring_16.append(student_name)
+
+        elif word[4] == "Summer 2016":
+            student_name = "{} {}".format(word[0], word[1])
+            summer_16.append(student_name)  
+
+        elif word[4] == "Fall 2015":
+            student_name = "{} {}".format(word[0], word[1])
+            fall_15.append(student_name)    
+
+        elif word[4] == "G":
+            student_name = "{} {}".format(word[0], word[1])
+            ghosts.append(student_name)
+
+        
+    all_students.extend([fall_15])        
+    all_students.extend([winter_16])
+    all_students.extend([spring_16])
+    all_students.extend([summer_16])
+    all_students.extend([ghosts])
+
+
 
     return all_students
 
+print sort_by_cohort("cohort_data.txt")
 
 def hogwarts_by_house(filename):
     """TODO: Sort students into lists by house and return all lists in one list.
@@ -77,6 +109,41 @@ def hogwarts_by_house(filename):
     instructors = []
 
     # Code goes here
+    filename = open(filename)
+    for line in filename:
+        line = line.rstrip()
+        word = line.split("|")
+        student_name = "{}".format(word[1])
+
+        if word[2] == "Dumbledore's Army":
+            dumbledores_army.append(student_name)
+
+        elif word[2] == "Gryffindor":
+            gryffindor.append(student_name)
+
+        elif word[2] == "Hufflepuff":
+            hufflepuff.append(student_name)
+
+        elif word[2] == "Ravenclaw":
+            ravenclaw.append(student_name)
+
+        elif word[2] == "Slytherin":
+            slytherin.append(student_name)
+
+        elif word[4] == "G":
+            ghosts.append(student_name)
+
+        elif word[4] == "I":
+            instructors.append(student_name)
+
+    all_hogwarts.extend([sorted(dumbledores_army)])
+    all_hogwarts.extend([sorted(gryffindor)])
+    all_hogwarts.extend([sorted(hufflepuff)])
+    all_hogwarts.extend([sorted(ravenclaw)])
+    all_hogwarts.extend([sorted(slytherin)])
+    all_hogwarts.extend([sorted(ghosts)])
+    all_hogwarts.extend([sorted(instructors)])
+
 
     return all_hogwarts
 
