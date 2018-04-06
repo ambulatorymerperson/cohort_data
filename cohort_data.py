@@ -1,151 +1,151 @@
-# """Functions to parse a file containing student data."""
+"""Functions to parse a file containing student data."""
 
-# def unique_houses(filename):
-#     """TODO: Return a set of student houses.
+def unique_houses(filename):
+    """TODO: Return a set of student houses.
 
-#     Iterate over the cohort_data.txt file to look for all of the included house names
-#     and create a set called "houses" that holds those names.
+    Iterate over the cohort_data.txt file to look for all of the included house names
+    and create a set called "houses" that holds those names.
 
-#     For example:
+    For example:
 
-#     >>> sorted(unique_houses("cohort_data.txt"))
-#     ["Dumbledore's Army", 'Gryffindor', 'Hufflepuff', 'Ravenclaw', 'Slytherin']
+    >>> sorted(unique_houses("cohort_data.txt"))
+    ["Dumbledore's Army", 'Gryffindor', 'Hufflepuff', 'Ravenclaw', 'Slytherin']
 
-#     """
+    """
 
-#     houses = set()
-#     filename = open(filename)
-#     # Code goes here
-#     for line in filename:
-#         line = line.rstrip()
-#         word = line.split("|")
+    houses = set()
+    filename = open(filename)
+    # Code goes here
+    for line in filename:
+        line = line.rstrip()
+        word = line.split("|")
 
-#         if len(word[2]) > 1:
-#             houses.add(word[2])
+        if len(word[2]) > 1:
+            houses.add(word[2])
 
-#     return houses
+    return houses
 
-# print unique_houses("cohort_data.txt")
+print unique_houses("cohort_data.txt")
 
-# def sort_by_cohort(filename):
-#     """TODO: Return a list of all cohort lists, including ghosts but not instructors.
+def sort_by_cohort(filename):
+    """TODO: Return a list of all cohort lists, including ghosts but not instructors.
 
-#     Sort students by cohort, skipping instructors.
+    Sort students by cohort, skipping instructors.
 
-#     Iterate over the data to create a list for each cohort. Puts ghosts into a
-#     separate list called "ghosts".
+    Iterate over the data to create a list for each cohort. Puts ghosts into a
+    separate list called "ghosts".
 
-#     For example:
+    For example:
 
-#     >>> sort_by_cohort("cohort_data.txt")
-#     [['Harry Potter', 'Mandy Brocklehurst', 'Ron Weasley', 'Oliver Wood', 'Colin Creevey', 'Cho Chang', 'Michael Corner', 'Draco Malfoy', 'Seamus Finnigan', 'Eddie Carmichael', 'Theodore Nott', 'Terence Higgs', 'Hermione Granger', 'Penelope Clearwater', 'Angelina Johnson', 'Dennis Creevey'], ['Neville Longbottom', 'Cedric Diggory', 'Pansy Parkinson', 'Anthony Goldstein', 'Padma Patil', 'Luna Lovegood', 'Eleanor Branstone', 'Lee Jordan', 'Marietta Edgecombe', 'Andrew Kirke', 'Ginny Weasley', 'Mary Macdonald', 'Blaise Zabini', 'Natalie McDonald', 'Adrian Pucey', 'Hannah Abbott', 'Graham Pritchard', 'Susan Bones', 'Roger Davies', 'Owen Cauldwell'], ['Laura Madley', 'Orla Quirke', 'Parvati Patil', 'Eloise Midgeon', 'Zacharias Smith', 'Cormac McLaggen', 'Lisa Turpin', 'Demelza Robins', 'Ernie Macmillan', 'Millicent Bullstrode', 'Percy Weasley', 'Jimmy Peakes', 'Justin Finch-Fletchley', 'Miles Bletchley', 'Malcolm Baddock'], ['Marcus Belby', 'Euan Abercrombie', 'Vincent Crabbe', 'Ritchie Coote', 'Katie Bell', 'Terry Boot', 'Lavender Brown', 'Gregory Goyle', 'Marcus Flint', 'Dean Thomas', 'Jack Sloper', 'Rose Zeller', 'Stewart Ackerley', 'Fred Weasley', 'George Weasley', 'Romilda Vane', 'Alicia Spinnet', 'Kevin Whitby'], ['Friendly Friar', 'Grey Lady', 'Nearly Headless Nick', 'Bloody Baron']]
-#     """
+    >>> sort_by_cohort("cohort_data.txt")
+    [['Harry Potter', 'Mandy Brocklehurst', 'Ron Weasley', 'Oliver Wood', 'Colin Creevey', 'Cho Chang', 'Michael Corner', 'Draco Malfoy', 'Seamus Finnigan', 'Eddie Carmichael', 'Theodore Nott', 'Terence Higgs', 'Hermione Granger', 'Penelope Clearwater', 'Angelina Johnson', 'Dennis Creevey'], ['Neville Longbottom', 'Cedric Diggory', 'Pansy Parkinson', 'Anthony Goldstein', 'Padma Patil', 'Luna Lovegood', 'Eleanor Branstone', 'Lee Jordan', 'Marietta Edgecombe', 'Andrew Kirke', 'Ginny Weasley', 'Mary Macdonald', 'Blaise Zabini', 'Natalie McDonald', 'Adrian Pucey', 'Hannah Abbott', 'Graham Pritchard', 'Susan Bones', 'Roger Davies', 'Owen Cauldwell'], ['Laura Madley', 'Orla Quirke', 'Parvati Patil', 'Eloise Midgeon', 'Zacharias Smith', 'Cormac McLaggen', 'Lisa Turpin', 'Demelza Robins', 'Ernie Macmillan', 'Millicent Bullstrode', 'Percy Weasley', 'Jimmy Peakes', 'Justin Finch-Fletchley', 'Miles Bletchley', 'Malcolm Baddock'], ['Marcus Belby', 'Euan Abercrombie', 'Vincent Crabbe', 'Ritchie Coote', 'Katie Bell', 'Terry Boot', 'Lavender Brown', 'Gregory Goyle', 'Marcus Flint', 'Dean Thomas', 'Jack Sloper', 'Rose Zeller', 'Stewart Ackerley', 'Fred Weasley', 'George Weasley', 'Romilda Vane', 'Alicia Spinnet', 'Kevin Whitby'], ['Friendly Friar', 'Grey Lady', 'Nearly Headless Nick', 'Bloody Baron']]
+    """
 
-#     all_students = []
-#     winter_16 = []
-#     spring_16 = []
-#     summer_16 = []
-#     fall_15 = []
-#     ghosts = []
-#     filename = open(filename)
-#     for line in filename:
-#         line = line.rstrip()
-#         word = line.split("|")
+    all_students = []
+    winter_16 = []
+    spring_16 = []
+    summer_16 = []
+    fall_15 = []
+    ghosts = []
+    filename = open(filename)
+    for line in filename:
+        line = line.rstrip()
+        word = line.split("|")
 
-#         if word[4] == "Winter 2016":
-#             student_name = "{} {}".format(word[0], word[1])
-#             winter_16.append(student_name)
+        if word[4] == "Winter 2016":
+            student_name = "{} {}".format(word[0], word[1])
+            winter_16.append(student_name)
         
-#         elif word[4] == "Spring 2016":
-#             student_name = "{} {}".format(word[0], word[1])
-#             spring_16.append(student_name)
+        elif word[4] == "Spring 2016":
+            student_name = "{} {}".format(word[0], word[1])
+            spring_16.append(student_name)
 
-#         elif word[4] == "Summer 2016":
-#             student_name = "{} {}".format(word[0], word[1])
-#             summer_16.append(student_name)  
+        elif word[4] == "Summer 2016":
+            student_name = "{} {}".format(word[0], word[1])
+            summer_16.append(student_name)  
 
-#         elif word[4] == "Fall 2015":
-#             student_name = "{} {}".format(word[0], word[1])
-#             fall_15.append(student_name)    
+        elif word[4] == "Fall 2015":
+            student_name = "{} {}".format(word[0], word[1])
+            fall_15.append(student_name)    
 
-#         elif word[4] == "G":
-#             student_name = "{} {}".format(word[0], word[1])
-#             ghosts.append(student_name)
+        elif word[4] == "G":
+            student_name = "{} {}".format(word[0], word[1])
+            ghosts.append(student_name)
 
         
-#     all_students.extend([fall_15])        
-#     all_students.extend([winter_16])
-#     all_students.extend([spring_16])
-#     all_students.extend([summer_16])
-#     all_students.extend([ghosts])
+    all_students.extend([fall_15])        
+    all_students.extend([winter_16])
+    all_students.extend([spring_16])
+    all_students.extend([summer_16])
+    all_students.extend([ghosts])
 
 
 
-#     return all_students
+    return all_students
 
-# print sort_by_cohort("cohort_data.txt")
+print sort_by_cohort("cohort_data.txt")
 
-# def hogwarts_by_house(filename):
-#     """TODO: Sort students into lists by house and return all lists in one list.
+def hogwarts_by_house(filename):
+    """TODO: Sort students into lists by house and return all lists in one list.
 
-#     Iterate over the data to create an alphabeticaly sorted list for each
-#     house, and sorts students into their appropriate houses by last name. Sorts
-#     ghosts into a list called "ghosts" and instructors into a list called
-#     "instructors". Add them, in that order, to your list of houses.
+    Iterate over the data to create an alphabeticaly sorted list for each
+    house, and sorts students into their appropriate houses by last name. Sorts
+    ghosts into a list called "ghosts" and instructors into a list called
+    "instructors". Add them, in that order, to your list of houses.
 
-#     For example:
-#     >>> hogwarts_by_house("cohort_data.txt")
-#     [['Abbott', 'Chang', 'Creevey', 'Creevey', 'Edgecombe', 'Nott', 'Spinnet'], ['Abercrombie', 'Bell', 'Brown', 'Coote', 'Finnigan', 'Granger', 'Johnson', 'Jordan', 'Kirke', 'Longbottom', 'Macdonald', 'McDonald', 'McLaggen', 'Patil', 'Peakes', 'Potter', 'Robins', 'Sloper', 'Thomas', 'Vane', 'Weasley', 'Weasley', 'Weasley', 'Weasley', 'Weasley', 'Wood'], ['Bones', 'Branstone', 'Cauldwell', 'Diggory', 'Finch-Fletchley', 'Macmillan', 'Madley', 'Midgeon', 'Smith', 'Whitby', 'Zeller'], ['Ackerley', 'Belby', 'Boot', 'Brocklehurst', 'Carmichael', 'Clearwater', 'Corner', 'Davies', 'Goldstein', 'Lovegood', 'Patil', 'Quirke', 'Turpin'], ['Baddock', 'Bletchley', 'Bullstrode', 'Crabbe', 'Flint', 'Goyle', 'Higgs', 'Malfoy', 'Parkinson', 'Pritchard', 'Pucey', 'Zabini'], ['Baron', 'Friar', 'Lady', 'Nick'], ['Flitwick', 'McGonagall', 'Snape', 'Sprout']]
+    For example:
+    >>> hogwarts_by_house("cohort_data.txt")
+    [['Abbott', 'Chang', 'Creevey', 'Creevey', 'Edgecombe', 'Nott', 'Spinnet'], ['Abercrombie', 'Bell', 'Brown', 'Coote', 'Finnigan', 'Granger', 'Johnson', 'Jordan', 'Kirke', 'Longbottom', 'Macdonald', 'McDonald', 'McLaggen', 'Patil', 'Peakes', 'Potter', 'Robins', 'Sloper', 'Thomas', 'Vane', 'Weasley', 'Weasley', 'Weasley', 'Weasley', 'Weasley', 'Wood'], ['Bones', 'Branstone', 'Cauldwell', 'Diggory', 'Finch-Fletchley', 'Macmillan', 'Madley', 'Midgeon', 'Smith', 'Whitby', 'Zeller'], ['Ackerley', 'Belby', 'Boot', 'Brocklehurst', 'Carmichael', 'Clearwater', 'Corner', 'Davies', 'Goldstein', 'Lovegood', 'Patil', 'Quirke', 'Turpin'], ['Baddock', 'Bletchley', 'Bullstrode', 'Crabbe', 'Flint', 'Goyle', 'Higgs', 'Malfoy', 'Parkinson', 'Pritchard', 'Pucey', 'Zabini'], ['Baron', 'Friar', 'Lady', 'Nick'], ['Flitwick', 'McGonagall', 'Snape', 'Sprout']]
 
-#     """
+    """
 
-#     all_hogwarts = []
-#     dumbledores_army = []
-#     gryffindor = []
-#     hufflepuff = []
-#     ravenclaw = []
-#     slytherin = []
-#     ghosts = []
-#     instructors = []
+    all_hogwarts = []
+    dumbledores_army = []
+    gryffindor = []
+    hufflepuff = []
+    ravenclaw = []
+    slytherin = []
+    ghosts = []
+    instructors = []
 
-#     # Code goes here
-#     filename = open(filename)
-#     for line in filename:
-#         line = line.rstrip()
-#         word = line.split("|")
-#         student_name = "{}".format(word[1])
+    # Code goes here
+    filename = open(filename)
+    for line in filename:
+        line = line.rstrip()
+        word = line.split("|")
+        student_name = "{}".format(word[1])
 
-#         if word[2] == "Dumbledore's Army":
-#             dumbledores_army.append(student_name)
+        if word[2] == "Dumbledore's Army":
+            dumbledores_army.append(student_name)
 
-#         elif word[2] == "Gryffindor":
-#             gryffindor.append(student_name)
+        elif word[2] == "Gryffindor":
+            gryffindor.append(student_name)
 
-#         elif word[2] == "Hufflepuff":
-#             hufflepuff.append(student_name)
+        elif word[2] == "Hufflepuff":
+            hufflepuff.append(student_name)
 
-#         elif word[2] == "Ravenclaw":
-#             ravenclaw.append(student_name)
+        elif word[2] == "Ravenclaw":
+            ravenclaw.append(student_name)
 
-#         elif word[2] == "Slytherin":
-#             slytherin.append(student_name)
+        elif word[2] == "Slytherin":
+            slytherin.append(student_name)
 
-#         elif word[4] == "G":
-#             ghosts.append(student_name)
+        elif word[4] == "G":
+            ghosts.append(student_name)
 
-#         elif word[4] == "I":
-#             instructors.append(student_name)
+        elif word[4] == "I":
+            instructors.append(student_name)
 
-#     all_hogwarts.extend([sorted(dumbledores_army)])
-#     all_hogwarts.extend([sorted(gryffindor)])
-#     all_hogwarts.extend([sorted(hufflepuff)])
-#     all_hogwarts.extend([sorted(ravenclaw)])
-#     all_hogwarts.extend([sorted(slytherin)])
-#     all_hogwarts.extend([sorted(ghosts)])
-#     all_hogwarts.extend([sorted(instructors)])
+    all_hogwarts.extend([sorted(dumbledores_army)])
+    all_hogwarts.extend([sorted(gryffindor)])
+    all_hogwarts.extend([sorted(hufflepuff)])
+    all_hogwarts.extend([sorted(ravenclaw)])
+    all_hogwarts.extend([sorted(slytherin)])
+    all_hogwarts.extend([sorted(ghosts)])
+    all_hogwarts.extend([sorted(instructors)])
 
 
-#     return all_hogwarts
+    return all_hogwarts
 
 
 def all_students_tuple_list(filename):
@@ -197,22 +197,29 @@ def find_cohort_by_student_name(student_list):
 
     
 
-    # while True:
-    #     name = raw_input("Who are looking for? ")
+    while True:
+        name = raw_input("Who are looking for? ")
 
         
+        count = 0
+        for i in student_list:
+        #    print student_list[0]
+            if name == i[0]:
+                print "{} was in the {} cohort.".format(i[0], i[3])
+                break        
 
-        # for i,idx in student_list:
-        #     if name == student_list[idx][0]:
-        #         print "{} was in the {} cohort.".format(student_list[0], student_list[3])
+                
+            elif name == "q" or name == "quit":
+                exit()
+            else:
+                count += 1 
+                if count == len(student_list) and name != i[0]: 
+                    print "Student not in directory."   
 
-        #     elif name == "q" or name == "quit":
-        #         exit()
-            
 
-    return student_list[0][0]
 
-print find_cohort_by_student_name(all_students_tuple_list)
+all_students_data = all_students_tuple_list("cohort_data.txt")
+print find_cohort_by_student_name(all_students_data)
 
 ##########################################################################################
 # Further Study Questions
@@ -267,21 +274,21 @@ print find_cohort_by_student_name(all_students_tuple_list)
 
 #     return
 
-# #############################################################################
-# # Here is some useful code to run these functions without doctests!
+#############################################################################
+# Here is some useful code to run these functions without doctests!
 
-# # find_cohort_by_student_name(all_students_data)
-# # find_house_members_by_student_name(all_students_data)
-
-
-# ##############################################################################
-# # END OF MAIN EXERCISE.  Yay!  You did it! You Rock!
-# #
+find_cohort_by_student_name(all_students_data)
+find_house_members_by_student_name(all_students_data)
 
 
+##############################################################################
+# END OF MAIN EXERCISE.  Yay!  You did it! You Rock!
+#
 
-# if __name__ == "__main__":
-#     import doctest
-#     result = doctest.testmod()
-#     if result.failed == 0:
-#         print("ALL TESTS PASSED")
+
+
+if __name__ == "__main__":
+    import doctest
+    result = doctest.testmod()
+    if result.failed == 0:
+        print("ALL TESTS PASSED")
